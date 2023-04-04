@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script language="javascript" type="text/javascript">
+        
+        var sesso = null;
+
+        function cap(){
+            if(document.form.cap.value.lenght != 5){
+                alert("il cap deve avere 5 cifre")
+            }
+            if(!isNaN(parseInt(document.form.cap.value))){
+                alert("il cap deve essere un numero");
+                return false;
+            }
+            return true;
+        }
+        function nome(){
+            var n = parseInt(document.from.nome_cognome.value);
+            if(!isNaN(n)){
+                alert("il nome non puo essere un numero");
+                return false;
+            }
+            return true;
+        }
+
+        function validaForm(){
+            if(document.form.nome_cognome.value == ""){
+                alert("inserire nome e cognome");
+                return false;
+            }
+            if(sesso == null){
+                alert("selezionare il sesso");
+                return false;
+            }
+            if(document.form.ateneo.value == ""){
+                alert("selezionare un ateneo");
+                return false;
+            }
+            if(document.form.sud_lav.checked && document.form.lavoro.value == ""){
+                alert("fornire la descrizione del lavoro");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form action="" method="post" name="form" onSubmit="return validaForm();">
+        cognome e Nome
+        <input type="text" name="nome_cognome" maxlength="50" size="50" onChange="return nome();"><br>
+        sesso
+        <input type="radio" value="M" name="sesso" onClick="sesso = this.value;"> M
+        <input type="radio" value="F" name="sesso" onClick="sesso = this.value;"> F <br>
+        Ateneo
+        <select name="ateneo" id="at">
+            <option value=""></option>
+            <option value="sapienza">Sapienza</option>
+            <option value="roma3">Roma 3</option>
+            <option value="tro_vergata">Tor Vergata</option>
+        </select> <br>
+        Cap
+        <input type="text" maxlength="5" size="5" name="cap" onChange="return cap();"><br>
+        Studente lavoratore
+        <input type="checkbox" name="stud_lav"><br>
+        Lavoro svolto
+        <input type="text" name="lavoro" maxlength="80" size="80"><br><br>
+        <input type="submit">
+        <input type="reset">
+    </form>
+</body>
+</html>

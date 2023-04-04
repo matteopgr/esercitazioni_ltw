@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyForm</title>
+    <script type="text/javascript" language="javascript">
+        function verificaForm(){
+            if(document.my_form.cognome.value == ""){
+                alert("inserire cognome");
+                return false;
+            }
+            if(document.my_form.nome.value == ""){
+                alert("inserire nome");
+                return false;
+            }
+            if(isNaN(parseInt(document.my_form.matricola.value))){
+                alert("la matricola deve essere un numero!")
+                return false;
+            }
+            if(document.my_form.regione.value == ""){
+                alert("selezionare una regione");
+                return false;
+            }
+            if(document.my_form.email.value == "" && document.my_form.telefono.value == ""){
+                alert("inserire telefono o email");
+                return false;
+            }
+            alert("dati inseriti correttamente");
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form action="" method="post" name="my_form" onsubmit="return verificaForm();">
+        Cognome 
+        <input type="text" maxlength="40" size="40" name="cognome"> <br>
+        Nome 
+        <input type="text" maxlength="30" size="30" name="nome"> <br>
+        Matricola 
+        <input type="text" maxlength="12" size="12" name="matricola"> <br>
+        Regione 
+        <select name="regione" id="rg">
+            <option value=""></option>
+            <option value="Lazio">Lazio</option>
+            <option value="Abbruzzo">Abbruzzo</option>
+            <option value="Lombardia">Lombardia</option>
+        </select> <br>
+        Email 
+        <input type="text" maxlength="30" size="30" name="email"> <br>
+        Telefono 
+        <input type="text" maxlength="15" size="15" name="telefono"> <br>
+        Richieste particolari
+        <br>
+        <textarea name="richieste_particolari" id="rp" cols="60" rows="12"></textarea><br>
+        <input type="submit"><input type="reset">
+    </form>
+</body>
+</html>

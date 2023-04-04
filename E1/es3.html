@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head></head>
+<body>
+    <form action="" method="post" name="form-3">
+        nome e cognome: 
+        <input type="text" name="nome e cognome" size="50" maxlength="50">
+        <br>
+        data di nascita: 
+        <input type="date" name="data di nascita">
+        <br>
+        codice fiscale: 
+        <input type="text" name="codice fiscale" size="16" maxlength="16" pattern="[A-Za-z]{6}[0-9]{2}[A-Za-z][0-9]{2}[A-Za-z][0-9]{3}[A-Za-z]">
+        <br>
+        telefono o email: 
+        <input type="text" name="tel o em" size="40" maxlength="40" required>
+        <br>
+        pagina web personale: 
+        <input type="text" name="pag web" size="50" maxlength="50" pattern="https?://.+">
+        <br>
+        studente lavoratore: 
+        <input type="checkbox" name="lavoratore">
+        <br>
+        seleziona foto: 
+        <input type="file" name="foto" multiple>
+        <br>
+        lavoro svolto: 
+        <input type="text" name="lavoro" size="80" maxlength="80">
+        <br>
+        <input type="submit" value="invia modulo">
+        <input type="reset" value="reset">
+    </form>
+</body>

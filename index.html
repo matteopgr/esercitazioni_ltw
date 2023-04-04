@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" language="javascript">
+        function inizializzaStorageUtenti(){
+            if(typeof(localStorage.utenti) == "undefined")
+                localStorage.utenti = "[]";
+        }
+        function resetStotageUtenti(){
+            localStorage.utenti = "[]";
+        }
+        function stampaStorageUtenti(){
+            var u = JSON.parse(localStorage.utenti);
+            var l = u.lenght;
+            var s = new String("<h3>Stato di localStorage</h3>");
+            for(i = 0; i < l; i++)
+                s += JSON.stringify(u[i]) + "<br/>";
+            document.getElementById("vistaStorage").innerHTML = s;
+            return true;
+        }
+        function inserisciUtente(){
+
+        }
+    </script>
+</head>
+<body onload="inizializzaStorageUtenti();">
+    <form action="" method="post" name="form" onsubmit="return inserisciUtente();">
+        Cognome
+        <input type="text" name="cognome" size="40" maxlength="40"><br>
+        Nome
+        <input type="text" name="nome" size="30" maxlength="30"><br>
+        Matricola
+        <input type="text"  name="matricola" size="12" maxlength="12"><br>
+        <input type="submit" value="invia">
+        <input type="button" value="stampa storage">
+        <input type="button" value="reset storage">
+        <input type="reset" value="reset">
+        <div id="vistaStorage"></div>
+    </form>
+</body>
+</html>

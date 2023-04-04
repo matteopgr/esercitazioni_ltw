@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/valida_form.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="get" name="myform">
+        cognome:
+        <input type="text" name="cognome" maxlength="40" size="40" required>
+        <br>
+        nome:
+        <input type="text" name="nome" maxlength="30" size="30" required>
+        <br>
+        matricola:
+        <input type="number" size="7" maxlength="7" min="0" max="1234567" required>
+        <br>
+        regione:
+        <select name="regione" required>
+            <option value="terrone">terrone</option>
+            <option value="polentone">polentone</option>
+            <option value="normale">normale</option>
+        </select>
+        <br>
+        email:
+        <input type="email" size="30" maxlength="30" name="e-mail">
+        <br>
+        telefono:
+        <input type="tel" size="16" maxlength="16" name="telefono">
+        <br>
+        status:
+        <input type="text" name="status" list="listastatus">
+        <datalist id="listastatus">
+            <option value="in corso">in corso</option>
+            <option value="fuori corso">fuori corso</option>
+            <option value="ripetente">ripetente</option>
+            <option value="part time">part time</option>
+        </datalist>
+        </input>
+        <br>
+        richieste particolari:
+        <br>
+        <textarea name="richieste particolari" cols="60" rows="12"></textarea>
+        <br>
+        <input type="submit" value="invia modulo">
+        <br>
+        <input type="reset" value="reset">
+    </form>
+</body>

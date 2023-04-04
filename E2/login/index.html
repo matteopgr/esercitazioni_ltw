@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="signin.css">
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="rememberME.js"></script>
+    <title>Pagina di login</title>
+</head>
+<body class="text-center">
+    <form action="validateLogin.php" class="form-signin" method="post" name="myForm" 
+        onsubmit="return validaForm()">
+        <img src="../assets/brand/bootstrap-logo.svg" class="mb-4" width="72">
+        <h1 class="h3 mb-3">
+            Effettua il logon
+        </h1>
+        <input type="email" name="email" class="form-control" 
+            placeholder="Inserisci l'email" required autofocus>
+        <input type="password" name="password" class="form-control" 
+            placeholder="inserire password" required>
+        <div id="divRemember" class="checkbox mb-3">
+            <input type="checkbox" id="rmb" name="remember">
+            <label for="rmb">Ricordami</label>
+        </div>
+        <button class="btn btn-lg btn-primary" name="loginButton" type="submit">
+            Login
+        </button>
+    </form>
+</body>
+</html>
