@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function{
+                $("#zonaDinamica").load(this.innerHTML + ".html" ,function(responseText, statusText, xhr){
+                    if(statusText == "success") alert("caricamento completato");
+                    else if(statusText == "error") alert("Errore" + xhr.status + ":" +xhr.statusText )
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <button>Documento_1</button>
+        <button>Documento_2</button>
+        <button>Documento_3</button>
+        <button>Documento_4</button>
+        </div>
+        <hr/>
+        <div id="zonaDinamica">
+        Seleziona il documento da visualizzare
+        </div>
+        <hr/>
+        Resto del documento<br/>
+        ...
+</body>
+</html>

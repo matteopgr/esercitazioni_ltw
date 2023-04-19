@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".c1").click(function(){
+                $(this).css("color", "blue");
+            });
+            $(".c1").dblclick(function(){
+                $(this).hide();
+            });
+            $("span.c2").click(function(){
+                $(".c1").toggle();
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1 class="c1">Questo elemento è di classe c1</h1>
+    <h2 class="c1">Anche questo elemento è di classe c1</h2>
+    <span class="c2">Questo elemento è uno span di classe c2</span>
+</body>
+</html>

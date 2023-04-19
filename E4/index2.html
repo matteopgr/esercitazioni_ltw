@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button:first").click(function(){
+                $("h1").text("");
+            });
+            $("button:first + button").click(function(){
+                $("div:first").css("color", "red");
+            })
+            $(".b3").mouseover(function(){
+                $("div:first + div").text("abc")
+            })
+        });
+    </script>
+</head>
+<body>
+    <button>bottone 1</button>
+    <button class="b2">bottone 2</button>
+    <button class="b3">bottone 3</button><br>
+    <h1>primo h1</h1>
+    <h1>secondo h1</h1>
+    <h1>terzo h1</h1>
+    <div>primo div</div><br>
+    <div class="d2">secondo div</div>
+</body>
+</html>
